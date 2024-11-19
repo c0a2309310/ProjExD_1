@@ -21,13 +21,11 @@ def main():
             if event.type == pg.QUIT: return
         
         screen.blit(bg_img, [0+tmr, 0])
-        bg_width = int(bg_img.get_width()/(tmr+1))
-        screen.blit(bg_img2,[bg_width,0])
+        bg_width = int(bg_img.get_width())
+        screen.blit(bg_img2,[0,0])
         screen.blit(kk_img,[300,200])
         pg.display.update()
         tmr += 1
-        # if tmr == 800:
-        #     tmr = 0      
         clock.tick(200)
 
 
