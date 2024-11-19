@@ -19,10 +19,13 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-        
-        screen.blit(bg_img, [0+tmr, 0])
-        bg_width = int(bg_img.get_width())
-        screen.blit(bg_img2,[0,0])
+
+        x = -(tmr%3200)
+        bg_width = bg_img.get_width() 
+        screen.blit(bg_img, [x, 0])
+        screen.blit(bg_img2,[x+bg_width,0])
+        screen.blit(bg_img, [x+bg_width*2,0])
+        screen.blit(bg_img2,[x+bg_width*3,0])
         screen.blit(kk_img,[300,200])
         pg.display.update()
         tmr += 1
